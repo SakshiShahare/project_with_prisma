@@ -12,6 +12,9 @@ app.use(express.urlencoded({extended : true}));
 //parsing the cookies
 app.use(cookieParser());
 
+const userRouter = require('./routes/user.route.js');
+app.use('/api/v1' , userRouter);
+
 app.get('/test' , (req, res)=>{
     res.json("hey working test");
 })
